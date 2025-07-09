@@ -4,19 +4,18 @@ import { LoginService } from '../../login-service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-navbar',
   imports: [RouterLink,CommonModule],
-templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css'
+  templateUrl: './navbar.html',
+  styleUrl: './navbar.css'
 })
-export class Dashboard {
-  router=inject(Router);
-  loginService=inject(LoginService);
-  loggedIn$ = this.loginService.loggedIn$;
+export class Navbar {
+ router=inject(Router);
+ loginService=inject(LoginService);
+ loggedIn$ = this.loginService.loggedIn$;
 
   logout() {
     this.loginService.logout();
     this.router.navigateByUrl('/');
   }
-
 }
